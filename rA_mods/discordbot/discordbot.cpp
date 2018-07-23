@@ -151,7 +151,7 @@ inline void discord_bot_send_channel(const char *msg) {
 
 void discord_bot_recv_channel(struct map_session_data *sd, const char *msg) {
 	nullpo_retv(sd);
-	snprintf(send_string, 150, "<%s>: %s", sd->status.name, msg);
+	snprintf(send_string, 150, "%s,%s", sd->status.name, msg);
 	discord->send_api(send_string, false);
 }
 
